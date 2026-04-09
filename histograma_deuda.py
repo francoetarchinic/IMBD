@@ -48,17 +48,22 @@ def calcular_deciles_deuda():
         for r in conteo.index
     ]
 
+
     # 10. Graficar
     plt.figure()
-    conteo.plot(kind="bar")
+
+    ax = conteo.plot(kind="bar")  
 
     plt.xticks(ticks=range(len(labels)), labels=labels, rotation=45)
 
     plt.xlabel("Rangos de deuda")
     plt.ylabel("Cantidad de empresas")
     plt.title("Distribución de empresas por nivel de endeudamiento")
-    conteo = df['bin_num'].value_counts()
-    print(conteo)
+
+    # 🔥 Agregar números arriba de cada barra
+    for i, valor in enumerate(conteo):
+        ax.text(i, valor, str(valor), ha='center', va='bottom')
+
     plt.tight_layout()
     plt.show()
 
