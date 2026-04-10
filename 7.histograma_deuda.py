@@ -6,7 +6,7 @@ import numpy as np
 def calcular_deciles_deuda():
 
         # 1. Cargar datos
-    df = pd.read_csv("empresas_sit_financiera_optima.csv")
+    df = pd.read_csv("6.empresas_sit_financiera_optima.csv")
 
     # 2. Limpiar
     df["deuda_total"] = pd.to_numeric(df["deuda_total"], errors="coerce")
@@ -60,7 +60,7 @@ def calcular_deciles_deuda():
     plt.ylabel("Cantidad de empresas")
     plt.title("Distribución de empresas por nivel de endeudamiento")
 
-    # 🔥 Agregar números arriba de cada barra
+    # Agregar números arriba de cada barra
     for i, valor in enumerate(conteo):
         ax.text(i, valor, str(valor), ha='center', va='bottom')
 
