@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Cargar el archivo
-df = pd.read_csv("registro-nacional-sociedades-20260223.csv")
+df = pd.read_csv("1.registro-nacional-sociedades-20260223.csv")
 
 # Hacer la columna actividades_codigo un INTEGER
 
